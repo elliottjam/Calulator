@@ -62,7 +62,34 @@ def basic_calc
 end
 
 def advanced_calc
+  puts '(s)quare, (e)xponential'
+  operation = gets.chomp.downcase
+  case operation
+    when 's'
+      puts "Print the number"
+      num_1 = gets.chomp.to_f
+      puts num_1 ** 0.5
+      gets
+    when 'e'
+      input_numbers
+      input_first
+      num_1 = gets.chomp.to_f
+      input_second
+      num_2 = gets.chomp.to_f
+      print num_1 ** num_2
+      gets
+    else
+      puts "Not Valid Option."
+      gets
+  end
+
+
+
+
 end
+
+
+
 #HELLO!
 # run the app...
 
