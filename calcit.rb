@@ -3,9 +3,10 @@ def menu
   # Clear the screen, and present the user with a menu
   puts `clear`
   puts "***CalcIt***"
-  print "(b)asic, (a)dvanced, or (q)uit: "
+  print "(b)asic, (a)dvanced (m)ortgage, or (q)uit: "
   gets.chomp.downcase
 end
+
 def input_numbers
   puts "input two numbers"
 end
@@ -61,6 +62,24 @@ def basic_calc
 
 end
 
+  def mortgage_calc
+  puts 'clear'
+  puts "***Mortgage Calculator - Monthly Payments***"
+  print "enter loan amount:"
+  p = gets.to_f
+  print "Enter annual interest rate:"
+  i = gets.to_f/12/100
+  print "How many years will the mortgage last?:"
+  n = gets.to_f*12
+
+  x = i*(1+i)**n
+  y = (1+i)**n-1
+  z = p*(x/y)
+
+  puts z
+  gets
+end
+
 def advanced_calc
   puts '(s)quare, (e)xponential'
   operation = gets.chomp.downcase
@@ -101,6 +120,8 @@ while response != 'q'
     basic_calc
   when 'a'
     advanced_calc
+  when 'c'
+    mortgage_calc
   end
 
   response = menu
